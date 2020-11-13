@@ -1,6 +1,4 @@
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -17,16 +15,14 @@ public class HelloWorld extends Application {
 
         StackPane root = new StackPane();
         Scene scene = new Scene(root, 300, 250);
-        scene.getStylesheets().add("/src/stylesheet.css");
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
-        btn.getStyleClass().add("funky_button");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+        btn.setStyle( " -fx-background-color: lime;" +
+                "-fx-font-size: 16;" +
+                "-fx-font-family: 'Arial Black';" +
+                "-fx-padding: 10;" +
+                "-fx-text-fill: purple");
+        btn.setOnAction(event -> System.out.println("Hello World!"));
         root.getChildren().add(btn);
 
         primaryStage.setScene(scene);
