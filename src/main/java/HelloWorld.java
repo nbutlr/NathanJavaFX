@@ -1,8 +1,10 @@
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -20,22 +22,22 @@ public class HelloWorld extends Application {
         Scene scene = new Scene(root, 300, 250);
         root.setStyle("-fx-background-color: darkviolet;");
         Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.setText("Create new stage");
         btn.setStyle( " -fx-background-color: violet;" +
                 "-fx-font-size: 16;" +
                 "-fx-font-family: 'Comic Sans MS';" +
                 "-fx-padding: 10;" +
                 "-fx-text-fill: lavender");
-        final int[] counter = {0};
-        btn.setOnAction(event -> {
-            counter[0] +=1;
-            System.out.println("Hello World! "+ counter[0]);
-        });
+        btn.setOnAction((ActionEvent ae) -> openNewStage(root));
         root.getChildren().add(btn);
         primaryStage.setScene(scene);
         primaryStage.setOnCloseRequest(HelloWorld::exitPrompt);
         primaryStage.show();
 
+    }
+    public static void openNewStage(Pane parent) {
+        System.out.println("Hello world!");
+        StageTwo newStage = new StageTwo(parent);
     }
     private static void exitPrompt(WindowEvent we) {
 
