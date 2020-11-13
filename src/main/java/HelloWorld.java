@@ -35,7 +35,7 @@ public class HelloWorld extends Application {
         primaryStage.show();
 
     }
-    public static void openNewStage(Pane parent) {
+    private static void openNewStage(Pane parent) {
         System.out.println("Hello world!");
         StageTwo newStage = new StageTwo(parent);
     }

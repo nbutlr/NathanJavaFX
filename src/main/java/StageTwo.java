@@ -6,11 +6,11 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-public class StageTwo {
+class StageTwo {
 
-    static Pane parent;
+    private static Pane parent;
 
-    public StageTwo(Pane theParent) {
+    StageTwo(Pane theParent) {
 
         Stage stage = new Stage();
         parent = theParent;
@@ -19,7 +19,7 @@ public class StageTwo {
 
     }
 
-    public void start(Stage stage) {
+    private void start(Stage stage) {
 
         Pane root = new Pane();
         Scene scene = new Scene(root, 200, 290);
@@ -61,7 +61,7 @@ public class StageTwo {
         System.out.println("Wow its button "+test+" :o");
     }
 
-    public void closeStage(Stage stage) {
+    private void closeStage(Stage stage) {
 
         parent.setDisable(false);
         stage.close();
